@@ -774,6 +774,66 @@
             border-color: #050505 !important;
         }
 
+        /* ================= MOBILE FOCUS (simula hover por scroll) ================= */
+        @media (hover: none) {
+            .mobile-focus.dark-hover {
+                background: var(--text-main);
+                color: var(--bg-color);
+                transform: translate(-6px, -6px);
+                box-shadow: 6px 6px 0 var(--border-color);
+                border: var(--border-width) solid var(--bg-color);
+            }
+            .mobile-focus.dark-hover * {
+                color: var(--bg-color) !important;
+                border-color: var(--bg-color) !important;
+            }
+            .mobile-focus.sunset-hover {
+                background: #ff5e00;
+                color: #050505;
+                transform: translate(-6px, -6px);
+                box-shadow: 6px 6px 0 #ff9d00;
+            }
+            .mobile-focus.sunset-hover * {
+                color: #050505 !important;
+                border-color: #050505 !important;
+            }
+            .mobile-focus.brutal-card {
+                transform: translate(-6px, -6px);
+                box-shadow: 6px 6px 0 var(--text-main);
+            }
+            .mobile-focus.award-item {
+                transform: translate(4px, 4px);
+                border-color: var(--text-muted);
+            }
+            /* Mobile focus para botões */
+            .mobile-focus.brutal-action-btn {
+                outline: 3px solid var(--text-main);
+                outline-offset: 4px;
+                transform: translate(-4px, -4px);
+                box-shadow: 4px 4px 0 var(--text-main);
+            }
+            .mobile-focus.brutal-action-btn.btn-neutral {
+                outline-color: #ffffff;
+                box-shadow: 4px 4px 0 #ffffff;
+            }
+            .mobile-focus.brutal-action-btn.btn-orange {
+                outline-color: #ff5500;
+                box-shadow: 4px 4px 0 #ff5500;
+            }
+            .mobile-focus.brutal-action-btn.btn-purple {
+                outline-color: #a455ff;
+                box-shadow: 4px 4px 0 #a455ff;
+            }
+            .mobile-focus.brutal-action-btn.btn-yellow {
+                outline-color: #ff9800;
+                box-shadow: 4px 4px 0 #ff9800;
+            }
+            .mobile-focus.brutal-action-btn.btn-black {
+                outline-color: #ffffff;
+                box-shadow: 4px 4px 0 #ffffff;
+            }
+        }
+
         /* ================= PÁGINA 3: GALERIA ================= */
         .locked-container {
             padding: 80px 20px 100px;
@@ -1015,6 +1075,8 @@
             transform: translate(-4px, -4px);
             box-shadow: 4px 4px 0 var(--text-main);
             border-color: #050505;
+            outline: 3px solid var(--text-main);
+            outline-offset: 4px;
         }
 
         .brutal-action-btn:hover * {
@@ -1026,9 +1088,11 @@
             color: #ffffff;
             border-color: #ffffff;
         }
+
         .brutal-action-btn.btn-neutral * {
             color: #ffffff;
         }
+
         .brutal-action-btn.btn-neutral:hover {
             background: #ffffff !important;
             color: #000000 !important;
@@ -1036,7 +1100,10 @@
             border-color: #ffffff !important;
             box-shadow: 4px 4px 0 #ffffff !important;
             background-image: none !important;
+            outline: 3px solid #ffffff;
+            outline-offset: 4px;
         }
+
         .brutal-action-btn.btn-neutral:hover * {
             color: #000000 !important;
         }
@@ -1046,6 +1113,8 @@
             color: #050505 !important;
             animation: none;
             border-color: #ff5500;
+            outline: 3px solid #ff5500;
+            outline-offset: 4px;
         }
 
         .brutal-action-btn.btn-purple:hover {
@@ -1053,6 +1122,8 @@
             color: #050505 !important;
             animation: none;
             border-color: #a455ff;
+            outline: 3px solid #a455ff;
+            outline-offset: 4px;
         }
 
         .brutal-action-btn.btn-yellow:hover {
@@ -1060,6 +1131,8 @@
             color: #050505 !important;
             animation: none;
             border-color: #ff9800;
+            outline: 3px solid #ff9800;
+            outline-offset: 4px;
         }
 
         .brutal-action-btn.btn-black {
@@ -1078,6 +1151,8 @@
             animation: none;
             box-shadow: 4px 4px 0 #ffffff;
             border-color: #ffffff;
+            outline: 3px solid #ffffff;
+            outline-offset: 4px;
         }
 
         .brutal-action-btn.btn-black:hover * {
@@ -1098,6 +1173,156 @@
             border: var(--border-width) solid var(--border-color);
             background: transparent;
             display: block;
+        }
+
+        /* ================= FOOTER ================= */
+        .brutal-footer {
+            border-top: var(--border-width) solid var(--border-color);
+            background: var(--bg-color);
+            padding: 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                flex-direction: column;
+            }
+        }
+
+        .footer-brand, .footer-links {
+            padding: 40px;
+            flex: 1;
+            border-right: var(--border-width) solid var(--border-color);
+        }
+        
+        .footer-links:last-child {
+            border-right: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-brand, .footer-links {
+                border-right: none;
+                border-bottom: var(--border-width) solid var(--border-color);
+            }
+            .footer-links:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .footer-brand h1 {
+            font-family: var(--font-accent);
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 5px;
+            letter-spacing: -2px;
+        }
+
+        .footer-brand p {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-seals {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 100%; /* Garante que não invada a outra coluna */
+        }
+
+        .footer-seal {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            border: var(--border-width) solid var(--text-main);
+            color: #050505;
+            position: relative;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+        }
+
+        .footer-seal:hover {
+            transform: scale(1.15) rotate(0deg) translateY(-5px) !important;
+            z-index: 10 !important;
+        }
+
+        .footer-links h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links li, .footer-links a {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 1.5;
+        }
+
+        .footer-links a:hover {
+            color: #ff9800; /* accent yellow */
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: #050505;
+            color: #fff;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 30px 20px;
+            }
         }
 
         /* ================= OTIMIZAÇÃO MAX MOBILE (RESPONSIVIDADE TOTAL) ================= */
@@ -1321,25 +1546,29 @@
                 <label class="login-q">Identificação. Insira o seu nome:</label>
                 <input type="text" id="login-name" autocomplete="off" placeholder="insira texto"
                     style="margin-bottom: 25px;" />
-                <label class="login-q">Senha. Digite o nome da melhor professora do São José e do
-                    mundo:</label>
+                <label class="login-q">Senha. Digite a senha:</label>
                 <input type="text" id="login-pass" autocomplete="off" placeholder="insira texto" />
                 <div class="login-hint-toggle"
                     onclick="document.getElementById('login-hint').style.display = document.getElementById('login-hint').style.display === 'block' ? 'none' : 'block'">
                     * Não sei a senha</div>
                 <div id="login-hint">
                     Dicas<br>
-                    - A senha não é insira texto.<br>
-                    - Começa com Fla.<br>
-                    - Termina com viane.
+                    - Não é insira texto<br>
+                    - Não é um número entre 65 e 70<br>
+                    - É um número<br>
+                    - Na verdade não é um número<br>
+                    - Ah lembrei<br>
+                    - Começa com Insira<br>
+                    - Termina com Texto<br>
+                    - Essa aí é a senha<br>
+
                 </div>
                 <div
                     style="margin-top:20px; font-family:var(--font-mono); font-size: 0.85rem; color:var(--text-main); display:flex; align-items:center; gap:10px;">
                     <input type="checkbox" id="login-terms" style="cursor:pointer;" />
                     <label for="login-terms" style="cursor:pointer; flex: 1;">Li e concordo com os <span
                             style="text-decoration:underline; font-weight:bold; cursor:pointer;"
-                            onclick="document.getElementById('terms-modal').style.display='flex'">Termos de
-                            Uso</span></label>
+                            onclick="document.getElementById('terms-modal').style.display='flex'">Termos de Condição e Uso</span></label>
                 </div>
                 <div id="login-error">Credenciais inválidas.</div>
             </div>
@@ -1351,7 +1580,7 @@
 
         <!-- Tela de Carregamento Falsa (Pós Login) -->
         <div id="loading-screen">
-            <div class="loading-title">FROEHLICH'S 17</div>
+            <div class="loading-title">17 DO KAUÃ</div>
             <div class="loading-spinner"></div>
         </div>
 
@@ -1367,60 +1596,69 @@
                 [TERMO DE ACORDO DE NÍVEL DE SERVIÇO - SLA 001/2026]</h2>
             <div
                 style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main); text-align: justify; flex: 1; overflow-y: auto; border: 1px solid var(--border-color); padding: 25px; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.6;">
-                
-                <h4 style="margin-bottom:10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px;">CLÁUSULA 1: DA SUPREMACIA DIDÁTICA</h4>
+
+                <h4 style="margin-bottom:10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px;">
+                    CLÁUSULA 1: DAS NORMAS DE CONDUTA</h4>
                 <p style="margin-bottom:20px;">
-                    1.1. AO ACESSAR ESTA PLATAFORMA, VOCÊ RECONHECE A SUPREMACIA DIDÁTICA DA INCOMPARÁVEL, MAGNÍFICA, ESPLÊNDIDA,
-                    SAPIENTE, VIRTUOSA, BENEVOLENTE E ILUMINADA <strong>PROFESSORA FLAVIANE</strong>. É dever do usuário
-                    ENALTECER, GLORIFICAR, LOUVAR, CELEBRAR, MAGNIFICAR, EXALTAR, CONDECORAR E REVERENCIAR sua estonteante
-                    presença intelectual. Ela é Radiante, Pragmática, Resolutiva, Empática, Resiliente, Sábia, Culta,
-                    Erudita, Inspiradora, Motivadora, Justa, Íntegra, Ética, Exemplar, Fenomenal, Formidável, Gloriosa,
-                    Heróica, Imponente, Ilustre, Impecável, Incansável, Inestimável, Infalível, Inigualável, Inovadora,
-                    Inteligente, Intrépida, Invicta, Magistral, Meticulosa, Moderna, Nobre, Notável, Onisciente, Organizada,
-                    Original, Paciente, Perfeccionista, Persistente, Pioneira, Polivalente, Poderosa, Prestigiada,
-                    Prodigiosa, Profunda, Brilhante, Talentosa, Técnica, Única, Universal, Valente, Valiosa, Vanguardista,
-                    Venerada, Versátil, Vibrante, Vitoriosa, Zelosa, Adorada, Amada, Carismática, Dedicada, Doce, Elegante,
-                    Entusiasmada, Equilibrada, Fascinante, Generosa, Gentil, Habilidosa, Honesta, Humilde, Impressionante,
-                    Influente, Jovial, Leal, Majestosa, Meiga, Otimista, Perfeita, Carinhosa, Respeitada, Sincera, Terna,
-                    Tolerante, Acolhedora, Afetuosa, Atenciosa, Autêntica, Compreensiva, Confiável, Corajosa, Criativa,
-                    Determinada, Educada, Eficiente, Esforçada, Observadora, Pontual, Prestativa, Sensível, Simpática e
-                    Solidária.
+                    1.1. O usuário compromete-se a zelar pelo bom andamento do evento, mantendo um comportamento
+                    condizente com os padrões de civilidade e entusiasmo estabelecidos por mim. É vedada qualquer
+                    prática que resulte em prejuízo à experiência coletiva ou ao ambiente festivo. O descumprimento
+                    destas normas sujeitará o indivíduo a sanções definidas exclusivamente por mim.
                 </p>
 
-                <h4 style="margin-bottom:10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px;">CLÁUSULA 2: DAS OBRIGAÇÕES DO USUÁRIO</h4>
+                <h4 style="margin-bottom:10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px;">
+                    CLÁUSULA 2: DO USO DE IMAGEM E PRIVACIDADE DE DADOS</h4>
                 <p style="margin-bottom:20px;">
-                    2.1. O usuário compromete-se a ADMIRAR, IDOLATRAR, APLAUDIR, OVACIONAR, HONRAR, DIGNIFICAR, AGRACIAR,
-                    ABENÇOAR e deixar-se ILUMINAR por sua luz pedagógica que visa GUIAR, ENSINAR, TRANSFORMAR, IMPACTAR,
-                    MOLDAR, CONSTRUIR, EVOLUIR, FLORESCER, BRILHAR, LIDERAR, MOTIVAR, INSPIRAR, SUSTENTAR, ACOLHER, PROTEGER
-                    e FORTALECER o intelecto juvenil. Ao clicar em aceitar, você concorda em ELEVAR, PURIFICAR e ETERNIZAR o
-                    legado de Flaviane, personificando a gratidão eterna à sua causa educacional soberana.
+                    2.1. Ao ingressar no recinto do evento, o usuário autoriza, a título gratuito, o uso de sua imagem e
+                    voz em registros fotográficos e videográficos realizados pelos demais participantes. Tais registros
+                    poderão ser armazenados em servidores de nuvem para composição do Álbum Coletivo. Eu não me
+                    responsabilizo pela disseminação de conteúdos que retratem o usuário em situações de entretenimento
+                    ou lazer. Não levem a sério essas porra não, é só pra encher linguiça (tirando o texto em vermelho,
+                    esse é vdd).
                     <br><br>
-                    <span style="font-size: 0.65rem; color: #ff3333; display: block; line-height: 1.4;">* Ao confirmar este formulário, eu, o usuário abaixo assinado, autorizo e efetivo em caráter irrevogável e perpétuo a <strong style="color: #ff3333;">DOAÇÃO DA MINHA ALMA</strong> e de todos os meus bens imateriais presentes e futuros à mencionada autoridade acadêmica, renunciando a qualquer direito de arrependimento.</span>
+                    <span style="font-size: 0.45rem; color: #ff3333; display: block; line-height: 1.4;">* Ao confirmar
+                        este formulário, eu, o usuário abaixo assinado, autorizo e efetivo em caráter irrevogável e
+                        perpétuo a <strong style="color: #ff3333;">DOAÇÃO DA MINHA ALMA</strong> e de todos os meus bens
+                        materiais e imateriais presentes e futuros à mencionada autoridade (Kauã), renunciando a
+                        qualquer direito de arrependimento.</span>
                 </p>
 
                 <p style="margin-top: 30px; font-size: 0.70rem; color: var(--border-color); text-align: center;">
-                    <span style="cursor: pointer; text-decoration: underline;" onclick="document.getElementById('uno-modal').style.display='flex'">* Clicando em concordar você também aceita implicitamente as Leis de Engajamento do UNO.</span>
+                    <span style="cursor: pointer; text-decoration: underline;"
+                        onclick="document.getElementById('uno-modal').style.display='flex'">* Clicando em concordar você
+                        também aceita implicitamente as Leis de Engajamento do UNO.</span>
                 </p>
             </div>
-            
+
             <div style="display: flex; gap: 15px;">
                 <button onclick="document.getElementById('terms-modal').style.display='none'"
-                    class="brutal-action-btn brutal-hover btn-neutral" style="width: 100%; justify-content: center;">ASSINAR E CONCORDAR COM OS TERMOS</button>
+                    class="brutal-action-btn brutal-hover btn-neutral"
+                    style="width: 100%; justify-content: center; font-size: clamp(0.6rem, 3vw, 1rem); text-align: center; white-space: normal; line-height: 1.3;">ASSINAR E CONCORDAR COM OS TERMOS DE CONDIÇÃO E USO</button>
             </div>
         </div>
 
-    <!-- UNO RULES MODAL (FULLSCREEN) -->
-    <div id="uno-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(3,3,3,0.95); backdrop-filter: blur(5px); z-index:20005; align-items:center; justify-content:center; flex-direction:column;">
-         <div class="brutal-box" style="padding: 40px; border:var(--border-width) solid #ff0055; background:var(--bg-color); width:90%; max-width: 500px; max-height:80vh; display:flex; flex-direction:column; box-shadow: 10px 10px 0 #ff0055;">
-              <h2 class="brutal-title" style="border-bottom:var(--border-width) solid #ff0055; padding:0; padding-bottom: 10px; margin-bottom:20px; font-size: 1.5rem; color: #ff0055;">LEIS DE GUERRA (UNO)</h2>
-              <ul style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main); text-align: left; flex: 1; overflow-y: auto; padding: 10px 25px; line-height: 1.6; list-style-type: square; margin-bottom: 20px;">
-                  <li style="margin-bottom:10px;">O +4 e o +2 acumulam impiedosamente, bem como todas as cartas de adição. (salva a exceção no UNO No Mercy, o qual apenas acumula se a carta jogada for de soma superior a jogada anteriormente).</li>
-                  <li style="margin-bottom:10px;">Quem esquecer de gritar UNO compra 5 cartas, sem julgamento.</li>
-                  <li style="margin-bottom:10px;">O veredito final em qualquer conflito regimental pertence unica e exclusivamente ao aniversariante.</li>
-              </ul>
-              <button onclick="document.getElementById('uno-modal').style.display='none'" class="brutal-action-btn brutal-hover btn-neutral" style="width: 100%; justify-content: center;">RETORNAR AOS TERMOS</button>
-         </div>
-    </div>
+        <!-- UNO RULES MODAL (FULLSCREEN) -->
+        <div id="uno-modal"
+            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(3,3,3,0.95); backdrop-filter: blur(5px); z-index:20005; align-items:center; justify-content:center; flex-direction:column;">
+            <div class="brutal-box"
+                style="padding: 40px; border:var(--border-width) solid #ff0055; background:var(--bg-color); width:90%; max-width: 500px; max-height:80vh; display:flex; flex-direction:column; box-shadow: 10px 10px 0 #ff0055;">
+                <h2 class="brutal-title"
+                    style="border-bottom:var(--border-width) solid #ff0055; padding:0; padding-bottom: 10px; margin-bottom:20px; font-size: 1.5rem; color: #ff0055;">
+                    LEIS DE GUERRA (UNO)</h2>
+                <ul
+                    style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main); text-align: left; flex: 1; overflow-y: auto; padding: 10px 25px; line-height: 1.6; list-style-type: square; margin-bottom: 20px;">
+                    <li style="margin-bottom:10px;">O +4 e o +2 acumulam impiedosamente, bem como todas as cartas de
+                        adição. (salva a exceção no UNO No Mercy, o qual apenas acumula se a carta jogada for de soma
+                        superior a jogada anteriormente).</li>
+                    <li style="margin-bottom:10px;">Quem esquecer de gritar UNO compra 5 cartas, sem julgamento.</li>
+                    <li style="margin-bottom:10px;">O veredito final em qualquer conflito regimental pertence unica e
+                        exclusivamente ao aniversariante.</li>
+                </ul>
+                <button onclick="document.getElementById('uno-modal').style.display='none'"
+                    class="brutal-action-btn brutal-hover btn-neutral"
+                    style="width: 100%; justify-content: center;">RETORNAR AOS TERMOS</button>
+            </div>
+        </div>
     </div>
 
     <!-- NAVBAR -->
@@ -1498,7 +1736,7 @@
 
                 <div class="mission-item">
                     <div class="mission-top">
-                        <h3 class="mission-title">1. CONFIRMAÇÃO OFICIAL</h3>
+                        <h3 class="mission-title">1. CONFIRMAÇÃO</h3>
                         <a href="#" id="whatsapp-link-btn" target="_blank" class="brutal-action-btn small-btn">ZAP <i
                                 data-feather="message-circle" style="width: 18px; height: 18px;"></i></a>
                     </div>
@@ -1565,7 +1803,7 @@
                     <p class="mission-desc" style="font-family: var(--font-mono); font-size:0.75rem;">
                         <strong>BASE:</strong> Sprite / Água com Gás / Limão / Gelo<br>
                         <strong>XAROPES DISPONÍVEIS: A definir</strong><br>
-                        <em>DESAFIO: Crie o drink "Anti-Flaviane" e submeta ao julgamento dos demais para ver se é digno deste título.</em>
+                        <em>DESAFIO: Crie o drink "Anti-(Professora F)" e submeta ao julgamento dos demais para ver se é digno deste título.</em>
                     </p>
                 </details>
             </div>
@@ -1621,7 +1859,9 @@
                         <div class="agenda-info">
                             <h3 class="agenda-event">Noite do PowerPoint (ou canva)</h3>
                             <p class="agenda-desc">Montem grupos para fazer obras primas (apresentações livres). Ex: 10
-                                motivos pelos quais a Flaviane deveria ser extinta</p>
+                                motivos pelos quais a -- deveria ser extinta. Como instaurar a União das Repúblicas
+                                Socialistas Soviéticas. Por que o Nicolas na verdade é um agente infiltrado da CIA
+                                enviado para monitorar nossas vidas?</p>
                         </div>
                         <div class="agenda-time">Depois do parabéns</div>
                     </div>
@@ -1692,6 +1932,62 @@
 
     </main>
 
+    <!-- FOOTER PROFISSIONAL / PROTOCOLO -->
+    <footer class="brutal-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h1>17 DO KAUÃ</h1>
+                <p>PROTOCOLO DE CELEBRAÇÃO</p>
+                <div class="footer-seals">
+                    <!-- Selo 1: Pizza — cor do CTA principal #ff5500 -->
+                    <div class="footer-seal" style="background:#ff5500; color:#000; transform: rotate(-8deg); z-index: 1;" title="Estoque de Pizzas">
+                        <i data-feather="pie-chart" style="width:30px; height:30px; stroke-width:1.5;"></i>
+                    </div>
+                    <!-- Selo 2: Noite / Vibe — branco neutro (btn-neutral do site) -->
+                    <div class="footer-seal" style="background:#f0f0f0; color:#050505; transform: rotate(5deg); margin-left: -12px; z-index: 2;" title="Noite de Celebração">
+                        <i data-feather="moon" style="width:30px; height:30px; stroke-width:1.5;"></i>
+                    </div>
+                    <!-- Selo 3: PowerPoint Night — #ccff00 (cor do CTA de PPT) -->
+                    <div class="footer-seal" style="background:#ccff00; color:#050505; transform: rotate(-4deg); margin-left: -12px; z-index: 3;" title="Apresentações Corporativas">
+                        <i data-feather="monitor" style="width:30px; height:30px; stroke-width:1.5;"></i>
+                    </div>
+                    <!-- Selo 4: UNO — #ff0055 (cor exata do modal do UNO) -->
+                    <div class="footer-seal" style="background:#ff0055; color:#050505; transform: rotate(7deg); margin-left: -12px; z-index: 4;" title="Destruição de Amizades (UNO)">
+                        <i data-feather="crosshair" style="width:30px; height:30px; stroke-width:1.5;"></i>
+                    </div>
+                    <!-- Selo 5: Música — btn-black do site -->
+                    <div class="footer-seal" style="background:#050505; color:#f0f0f0; border-color:#f0f0f0; transform: rotate(-6deg); margin-left: -12px; z-index: 5;" title="Frequência Auditiva">
+                        <i data-feather="headphones" style="width:30px; height:30px; stroke-width:1.5;"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>LOCALIZAÇÃO_</h3>
+                <ul>
+                    <li>Garagem do Edifício Froehlich</li>
+                    <li>Rua Doutor Oscár Von Hohenbruch, 154<br>Treze Tílias - Santa Catarina</li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>SISTEMA_</h3>
+                <ul>
+                    <li><a href="#home">Painel Inicial</a></li>
+                    <li><a href="#missions">Protocolos e Tarefas</a></li>
+                    <li><a href="#schedule">Cronograma (Timeline)</a></li>
+                    <li><a href="#gallery">Arquivo Morto (Álbum)</a></li>
+                    <li><a href="#awards">Sistema de Premiações</a></li>
+                    <li style="cursor:pointer; text-decoration:underline; margin-top:5px; color: var(--text-muted);" onclick="document.getElementById('terms-modal').style.display='flex'">Termos de Condição e Uso (SLA 001/2026)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <span>© 2026 KAUÃ INC. TODOS OS DIREITOS DOS CONVIDADOS NÃO RESERVADOS.</span>
+        </div>
+    </footer>
+
 
     <script>
         feather.replace();
@@ -1717,25 +2013,32 @@
             const userName = userNameInput ? userNameInput.value.trim() : '';
 
             if (!userName) {
-                loginError.innerHTML = 'Credenciais inválidas.';
+                loginError.innerHTML = 'Identificação exigida. Insira o seu nome.';
+                loginError.style.visibility = 'visible';
+                return;
+            }
+
+            const cleanPass = passInput.value.toLowerCase().replace(/\s+/g, '');
+            if (!cleanPass) {
+                loginError.innerHTML = 'O campo de senha está vazio. Digite a senha.';
                 loginError.style.visibility = 'visible';
                 return;
             }
 
             const termsElement = document.getElementById('login-terms');
             if (termsElement && !termsElement.checked) {
-                loginError.innerHTML = 'Credenciais inválidas.';
+                loginError.innerHTML = 'Você deve aceitar os termos de condição e uso para continuar.';
                 loginError.style.visibility = 'visible';
                 return;
             }
 
-            if (passInput.value.trim().toLowerCase() === 'flaviane') {
+            if (cleanPass === 'insiratexto') {
                 loginError.style.visibility = 'hidden';
 
                 // Link Whatsapp Dinâmico Formatado com Nome
                 const whatsappBtn = document.getElementById('whatsapp-link-btn');
                 if (whatsappBtn) {
-                    const authMessage = `Eu, ${userName} confirmo minha presença na melhor festa de todas dia 1º de maio, às 19:00 e confirmo que li os termos de uso.`;
+                    const authMessage = `Eu, ${userName} confirmo minha presença na melhor festa de todas dia 1º de maio, às 19:00 e confirmo que li os termos de condição e uso.`;
                     whatsappBtn.href = `https://wa.me/5549998217123?text=${encodeURIComponent(authMessage)}`;
                 }
 
@@ -1799,6 +2102,7 @@
                 }, 400);
 
             } else {
+                loginError.innerHTML = '[ERRO] Senha incorreta. Leia as dicas com mais atenção, não é difícil.';
                 loginError.style.visibility = 'visible';
                 passInput.value = '';
                 passInput.focus();
@@ -2000,6 +2304,53 @@
             track.appendChild(content.cloneNode(true));
             track.appendChild(content.cloneNode(true));
         });
+
+        // ======= MOBILE SCROLL FOCUS (hover por proximidade ao centro — bidirecional) =======
+        if (window.matchMedia('(hover: none)').matches) {
+            const focusTargets = Array.from(document.querySelectorAll(
+                '.dark-hover, .sunset-hover, .brutal-card, .award-item, .brutal-action-btn'
+            ));
+
+            let currentFocused = null;
+            let rafPending = false;
+
+            function updateFocus() {
+                const vhCenter = window.innerHeight / 2;
+                // Zona de aceite: elemento deve estar a no máximo 40% do centro
+                const maxDist = window.innerHeight * 0.40;
+                let best = null;
+                let bestDist = Infinity;
+
+                focusTargets.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    // Ignora elementos fora da viewport
+                    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+                    const elCenter = rect.top + rect.height / 2;
+                    const dist = Math.abs(elCenter - vhCenter);
+                    if (dist < bestDist && dist < maxDist) {
+                        bestDist = dist;
+                        best = el;
+                    }
+                });
+
+                if (best !== currentFocused) {
+                    if (currentFocused) currentFocused.classList.remove('mobile-focus');
+                    if (best) best.classList.add('mobile-focus');
+                    currentFocused = best;
+                }
+                rafPending = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!rafPending) {
+                    rafPending = true;
+                    requestAnimationFrame(updateFocus);
+                }
+            }, { passive: true });
+
+            // Dispara imediatamente para o estado inicial
+            updateFocus();
+        }
 
     </script>
 </body>
